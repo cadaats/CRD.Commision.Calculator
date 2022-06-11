@@ -1,6 +1,7 @@
 ﻿using CRD.Commission.Calculator.Interface;
 using CRD.Commission.Calculator.Models;
 using CRD.Commission.Calculator.Models.Constants;
+using CRD.Commission.Calculator.Models.Enums;
 using System.ComponentModel.Composition;
 
 namespace CRD.Commission.Calculator.CB
@@ -11,13 +12,13 @@ namespace CRD.Commission.Calculator.CB
     [Export(typeof(BaseCalculator))]
     public class CBCalculator : BaseCalculator
     {
-        public override string TradeType => "CB";
+        public override SecurityTypes TradeType => SecurityTypes.CB;
 
         public override Task<TradeResponse> CalculateFee(TradeRequest trade)
         {
             TradeResponse response = new TradeResponse(trade);
 
-            response.Commission = (decimal)((trade.TransactionType == Models.Enums.TradeSide.BUY) 
+            response.Commission = (decimal)((trade.TransactionType == Models.Enums.TransactionType.BUY) 
                 ? TradeConstants.CB_BUY_COMMISSION_PCT 
                 : TradeConstants.CB_SELL_COMMISSION_PCT 
                 * trade.TotalPrice) 

@@ -6,7 +6,7 @@ TestRunner testRunner = new TestRunner();
 Stopwatch stopwatch = new Stopwatch();
 
 long runTimeForLinear, runTimeForMaxParalleism, runTimeForParallelBatch = 0;
-string testDataFile = "Tests/MultipleTrades_Large.json";
+string testDataFile = "TestData/MultipleTrades_Large.json";
 
 ///// 
 ///// Run Linear trades

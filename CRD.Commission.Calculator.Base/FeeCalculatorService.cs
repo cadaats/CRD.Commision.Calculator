@@ -20,6 +20,8 @@ namespace CRD.Commission.Calculator
         private IEnumerable<BaseCalculator>? AvailableCalculators { get; set; }
         public FeeCalculatorService()
         {
+            /// Use MEF to load dll's dynamically, 
+            /// so that new calculators can be dropped in the execution folder without need of modifying the project references.
             try
             {
                 AggregateCatalog aggCatalog = new AggregateCatalog();
@@ -33,14 +35,13 @@ namespace CRD.Commission.Calculator
                     foreach (XmlNode assemblyNode in assemblyNodes)
                     {
                         string file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, assemblyNode.InnerText);
-                        //string file = Path.Combine(@"I:\Console\CRD\CRD.Commision.Calculator\Staging\Release\net6.0\", assemblyNode.InnerText); 
                         if (System.IO.File.Exists(file))
                         {
                             ComposablePartCatalog assemblyCatalog = new AssemblyCatalog(Assembly.LoadFile(file));
                             aggCatalog.Catalogs.Add(assemblyCatalog);
                         }
                         else
-                            throw new Exception($"Did not load file: {file}");
+                            throw new Exception($"Couldn't load file: {file}");
 
 
                     }
@@ -52,7 +53,7 @@ namespace CRD.Commission.Calculator
             }
             catch (Exception ex)
             {
-                throw;
+                Console.WriteLine($"Exception occured loading calculators: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
             }
         }
 
@@ -65,13 +66,13 @@ namespace CRD.Commission.Calculator
         {
             Task<TradeResponse> tradeResponse;
 
-            var calculator = (from c in AvailableCalculators
-                             where c.TradeType.ToLower().Equals(trade.SecurityType.ToLower())
+            var matchedCalculator = (from c in AvailableCalculators
+                             where c.TradeType == trade.SecurityType
                              select c).FirstOrDefault();
 
-            if(calculator != null)
+            if(matchedCalculator != null)
             {
-                tradeResponse = calculator.CalculateFee(trade);
+                tradeResponse = matchedCalculator.CalculateFee(trade);
             }
             else
             {
