@@ -1,0 +1,5 @@
+﻿<Assemblies>
+  <Assembly>CRD.Commission.Calculator.COM.dll</Assembly>
+  <Assembly>CRD.Commission.Calculator.CB.dll</Assembly>
+  <Assembly>CRD.Commission.Calculator.FX.dll</Assembly>
+</Assemblies>

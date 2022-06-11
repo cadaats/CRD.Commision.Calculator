@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath>I:\Console\CRD\CRD.Commision.Calculator\Staging</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="5jketbgg.wt3~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRD.Commission.Calculator.Base\CRD.Commission.Calculator.csproj" />
+  </ItemGroup>
+
+</Project>
