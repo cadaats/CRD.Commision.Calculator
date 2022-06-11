@@ -9,15 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CRD.Commission.Calculator.Base\CRD.Commission.Calculator.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Tests\MultipleTrades_Test2.json">
+    <None Update="Tests\MultipleTrades_Large.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Tests\MultipleTrades_Test1.json">
