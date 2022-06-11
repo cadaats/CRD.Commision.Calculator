@@ -32,8 +32,8 @@ namespace CRD.Commission.Calculator
                 {
                     foreach (XmlNode assemblyNode in assemblyNodes)
                     {
-                        //string file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, assemblyNode.InnerText);
-                        string file = Path.Combine(@"I:\Console\CRD\CRD.Commision.Calculator\Staging\Release\net6.0\", assemblyNode.InnerText); 
+                        string file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, assemblyNode.InnerText);
+                        //string file = Path.Combine(@"I:\Console\CRD\CRD.Commision.Calculator\Staging\Release\net6.0\", assemblyNode.InnerText); 
                         if (System.IO.File.Exists(file))
                         {
                             ComposablePartCatalog assemblyCatalog = new AssemblyCatalog(Assembly.LoadFile(file));
@@ -68,8 +68,6 @@ namespace CRD.Commission.Calculator
             var calculator = (from c in AvailableCalculators
                              where c.TradeType.ToLower().Equals(trade.SecurityType.ToLower())
                              select c).FirstOrDefault();
-
-            Task.Delay(100);
 
             if(calculator != null)
             {
