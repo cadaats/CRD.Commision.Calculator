@@ -1,16 +1,32 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using CRD.Commission.Calculator;
-using CRD.Commission.Calculator.Models;
-using System.Text.Json;
+using BenchmarkDotNet.Running;
+using CRD.Commision.Calculator.Console;
+using System.Diagnostics;
 
-Console.WriteLine("Hello  World");
+BenchmarkRunner.Run<TestRunner>();
 
-FeeCalculatorService feeCalculator = new FeeCalculatorService();
-var comm = await feeCalculator.CalculateCommission(new Trade()
-{
-    SecurityType = "COM",
-    Price = 100,
-    Quantity = 10000,
-    TransactionType = CRD.Commission.Calculator.Models.Enums.TradeSide.BUY
-});
-Console.WriteLine(JsonSerializer.Serialize(comm));
+//TestRunner testRunner = new TestRunner();
+//Stopwatch stopwatch = new Stopwatch();
+
+/////// 
+/////// Run single trade
+/////// 
+////await testRunner.RunSingleTrade();
+
+/////// 
+/////// Run multiple trades in parallel
+/////// 
+////stopwatch.Restart();
+//await testRunner.RunMultipleTradesWithMaxParallelism("Tests/MultipleTrades_Test2.json");
+////stopwatch.Stop();
+////Console.WriteLine($"Time taken to complete in MAX parallelism is {stopwatch.ElapsedMilliseconds} ms");
+
+///// 
+///// Run multiple trades in parallel - batchsize
+///// 
+////stopwatch.Restart();
+//int batchCount = 10;
+//await testRunner.RunMultipleTradesInParallel("Tests/MultipleTrades_Test2.json", batchCount);
+////stopwatch.Stop();
+////Console.WriteLine($"Time taken to complete in count of {batchCount} in parallel is {stopwatch.ElapsedMilliseconds} ms");
+

@@ -13,7 +13,7 @@ namespace CRD.Commission.Calculator.CB
     {
         public override string TradeType => "CB";
 
-        public override Task<TradeResponse> CalculateFee(Trade trade)
+        public override Task<TradeResponse> CalculateFee(TradeRequest trade)
         {
             TradeResponse response = new TradeResponse(trade);
 

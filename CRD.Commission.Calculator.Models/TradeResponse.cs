@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CRD.Commission.Calculator.Models
 {
-    public class TradeResponse : Trade
+    public class TradeResponse : TradeRequest
     {
         public decimal? Commission { get; set; }
 
         public string? ErrorMessage { get; set; }
 
-        public TradeResponse(Trade trade)
+        public TradeResponse(TradeRequest trade)
         {
             this.TradeDate = trade.TradeDate;
             this.Price = trade.Price;

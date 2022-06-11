@@ -13,7 +13,7 @@ namespace CRD.Commission.Calculator.COM
     {
         public override string TradeType => "COM";
 
-        public override Task<TradeResponse> CalculateFee(Trade trade)
+        public override Task<TradeResponse> CalculateFee(TradeRequest trade)
         {
             TradeResponse response = new TradeResponse(trade);
             response.Commission = (decimal)(TradeConstants.COM_COMMISSION_PCT * trade.TotalPrice) / 100;

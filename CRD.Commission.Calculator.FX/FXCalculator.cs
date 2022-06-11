@@ -14,7 +14,7 @@ namespace CRD.Commission.Calculator.FX
     {
         public override string TradeType => "FX";
 
-        public override Task<TradeResponse> CalculateFee(Trade trade)
+        public override Task<TradeResponse> CalculateFee(TradeRequest trade)
         {
             TradeResponse response = new TradeResponse(trade);
             switch (trade.TransactionType)
