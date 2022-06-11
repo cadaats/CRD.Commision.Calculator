@@ -4,12 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <BaseOutputPath>..\Staging</BaseOutputPath>
+    <BaseOutputPath>I:\Console\CRD\CRD.Commision.Calculator\Staging</BaseOutputPath>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="5jketbgg.wt3~" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Composition" Version="6.0.0" />

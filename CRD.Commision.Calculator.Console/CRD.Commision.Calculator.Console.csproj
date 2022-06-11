@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <BaseOutputPath>I:\Console\CRD\CRD.Commision.Calculator\Staging</BaseOutputPath>
+    <BaseOutputPath>..\Staging</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,10 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Tests\MultipleTrades_Large.json">
+    <None Update="TestData\MultipleTrades_Large.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Tests\MultipleTrades_Test1.json">
+    <None Update="TestData\MultipleTrades_Test1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
