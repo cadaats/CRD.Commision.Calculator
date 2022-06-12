@@ -1,6 +1,5 @@
 ﻿using CRD.Commission.Calculator;
 using CRD.Commission.Calculator.Models;
-using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace CRD.Commision.Calculator.Console
+namespace CRD.Commision.Calculator.ConsoleApp
 {
     public class TestRunner
     {

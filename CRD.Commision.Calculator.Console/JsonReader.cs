@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace CRD.Commision.Calculator.Console
+namespace CRD.Commision.Calculator.ConsoleApp
 {
     /// <summary>
     /// A json utility to read multiple trades from data file
