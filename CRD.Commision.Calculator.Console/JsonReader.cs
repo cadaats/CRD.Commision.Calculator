@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace CRD.Commision.Calculator.Console
 {
+    /// <summary>
+    /// A json utility to read multiple trades from data file
+    /// </summary>
     internal class JsonReader
     {
         internal List<TradeRequest>? GetTradesFromJson(string filePath)

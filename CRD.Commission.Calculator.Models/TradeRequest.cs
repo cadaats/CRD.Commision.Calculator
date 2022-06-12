@@ -5,11 +5,6 @@ namespace CRD.Commission.Calculator.Models
 {
     public class TradeRequest
     {
-        //private DateTime tradeDate;
-        //private SecurityTypes securityType;
-        //private double price;
-        //private double quantity;
-        //private TransactionType transactionType;
         public double TotalPrice => Price * Quantity;
 
         public DateTime TradeDate { get; private set; }
